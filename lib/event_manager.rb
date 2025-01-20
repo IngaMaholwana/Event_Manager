@@ -1,9 +1,13 @@
+require 'csv'
 puts 'EventManager initialized.'
 
-lines = File.readlines('event_attendees.csv')
-lines.each do |line|
-  next if line == " ,RegDate,first_Name,last_Name,Email_Address,HomePhone,Street,City,State,Zipcode\n"
-  columns = line.split(",")
-  name = columns[2]
+contents = CSV.open(
+  'event_attendees.csv',
+  headers: true,
+  header_converters: :symbol
+)
+
+contents.each do |row|
+  name = row[:first_name]
   puts name
 end
