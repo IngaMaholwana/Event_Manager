@@ -1,2 +1,1 @@
-civic_info.key = File.read('secret.key').strip
-# civic_info.key = 'AIzaSyClRzDqDh5MsXwnCWi0kOiiBivP6JsSyBw'
+secret.key
